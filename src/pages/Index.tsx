@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import MissionVision from "@/components/MissionVision";
+import ExploreSection from "@/components/ExploreSection";
 
 const Index = () => {
   return (
@@ -8,6 +9,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <MissionVision />
+      <ExploreSection />
     </div>
   );
 };
