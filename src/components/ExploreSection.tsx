@@ -1,17 +1,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import treeIcon from "@/assets/tree-icon.png";
 import slide1 from "@/assets/slide-1.jpg";
 import slide2 from "@/assets/slide-2.jpg";
 import slide3 from "@/assets/slide-3.jpg";
 import slide4 from "@/assets/slide-4.jpg";
 
-const slides = [
+type Slide = {
+  image: string;
+  title: string;
+  buttonText: string;
+  imageClass?: string;
+  imageStyle?: React.CSSProperties;
+};
+
+const slides: Slide[] = [
   {
-    image: slide1,
+    image: "/Images/Landing Page/Holding CoA boxes.png",
     title: "Building a healthier, more hopeful future for Pakistan",
     buttonText: "LEARN ABOUT LIVES CHANGED",
+    imageClass: "scale-[1.7] md:scale-[1.9]",
+    imageStyle: { objectPosition: "center top" },
   },
   {
     image: slide2,
@@ -46,24 +55,46 @@ const ExploreSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="relative bg-background px-4 py-20">
+      {/* Tree icon bottom-left */}
+      <img
+        src="/Images/Landing Page/CoA tree.png"
+        alt="Children of Adam tree"
+        className="pointer-events-none absolute bottom-6 left-6 w-20 md:w-28"
+      />
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-2">
+        <div className="mb-12 text-center" data-aos="fade-up">
+          <p className="text-base font-light uppercase tracking-[0.2em] text-foreground/80 md:text-lg">
             Explore How We
-          </h2>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-foreground">
+          </p>
+          <h3 className="text-3xl font-semibold text-foreground md:text-4xl lg:text-5xl">
             Enlighten, Engage, and Empower.
           </h3>
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative mx-auto max-w-5xl">
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute -left-14 top-1/2 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-black/60 bg-white text-black transition hover:bg-black hover:text-white md:flex lg:-left-16"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute -right-14 top-1/2 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-black/60 bg-white text-black transition hover:bg-black hover:text-white md:flex lg:-right-16"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
           {/* Main carousel container */}
-          <div className="relative rounded-3xl overflow-hidden aspect-[16/9] bg-muted">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-white/40 bg-muted shadow-xl">
             {/* Slides */}
-            <div className="relative w-full h-full">
+            <div className="relative h-full w-full">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -74,45 +105,30 @@ const ExploreSection = () => {
                   <img
                     src={slide.image}
                     alt={`Slide ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    style={slide.imageStyle}
+                    className={`h-full w-full object-cover object-center transition-transform duration-500 ${slide.imageClass ?? ""}`}
                   />
                 </div>
               ))}
             </div>
 
-            {/* Tree Icon - Bottom Left */}
-            <div className="absolute bottom-8 left-8 z-20">
-              <img src={treeIcon} alt="Tree icon" className="w-16 h-16 md:w-20 md:h-20" />
-            </div>
-
             {/* Card Overlay - Bottom Right */}
-            <div className="absolute bottom-8 right-8 z-20 bg-white rounded-2xl p-6 max-w-md shadow-xl">
-              <p className="text-foreground text-lg font-medium mb-4">
+            <div className="absolute bottom-4 right-4 z-20 max-w-xs rounded-2xl bg-white/95 p-4 text-left shadow-lg backdrop-blur">
+              <p className="mb-3 text-base font-medium text-foreground md:text-lg">
                 {slides[currentSlide].title}
               </p>
-              <button className="text-sm font-semibold underline text-foreground hover:text-primary transition-colors">
+              <button
+                className="text-xs font-semibold uppercase tracking-wide text-primary underline underline-offset-2 transition hover:text-primary/80 md:text-sm"
+                onClick={() => {
+                  window.location.href = "/our-work";
+                }}
+              >
                 {slides[currentSlide].buttonText}
               </button>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full p-3 hover:bg-gray-100 transition-colors shadow-lg"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-6 h-6 text-foreground" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white rounded-full p-3 hover:bg-gray-100 transition-colors shadow-lg"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-6 h-6 text-foreground" />
-            </button>
-
             {/* Dots Indicator */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+            <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 gap-2">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -126,6 +142,22 @@ const ExploreSection = () => {
                 />
               ))}
             </div>
+
+            {/* Mobile Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/60 md:hidden"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-black/30 text-white backdrop-blur-sm transition hover:bg-black/60 md:hidden"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
           </div>
         </div>
       </div>

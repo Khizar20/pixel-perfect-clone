@@ -1,25 +1,23 @@
-import treeIcon from "@/assets/tree-icon.png";
-import hospitalProject from "@/assets/hospital-project.jpg";
-import educationProject from "@/assets/education-project.jpg";
-import waterProject from "@/assets/water-project.jpg";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const projects = [
   {
-    image: hospitalProject,
-    title: "Bani Adam Neuropsychiatric Hospital",
+    image: "/Images/Landing Page/info boxes1.png",
+    title: "Bani Adam Neuropsychiatric",
     description: "Pakistan's first comprehensive neuropsychiatric facility, providing mental health care and rehabilitation services to underserved communities.",
     progress: 30,
     goal: "2.4B",
   },
   {
-    image: educationProject,
+    image: "/Images/Landing Page/info boxes2.png",
     title: "Informal School Education",
     description: "Pakistan's first comprehensive neuropsychiatric facility, providing mental health care and rehabilitation services to underserved communities.",
     progress: 73,
     goal: "1.5M",
   },
   {
-    image: waterProject,
+    image: "/Images/Landing Page/info boxes3.png",
     title: "Qutrah - Clean Water Initiative",
     description: "Addressing Pakistan's water crisis by providing clean, safe drinking water to rural communities through sustainable well systems.",
     progress: 65,
@@ -27,17 +25,80 @@ const projects = [
   },
 ];
 
+const getProjectLink = (title: string) => {
+  if (title.toLowerCase().includes("bani adam")) {
+    return "/our-work#bani-adam";
+  }
+  if (title.toLowerCase().includes("informal school")) {
+    return "/our-work#informal-schools";
+  }
+  if (title.toLowerCase().includes("qutrah")) {
+    return "/our-work";
+  }
+  return "/our-work";
+};
+
 const MissionAtWork = () => {
+  const navigate = useNavigate();
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!headerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setHeaderVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(headerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!cardsRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setCardsVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(cardsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative py-20 px-4 bg-[hsl(210,40%,92%)]">
+    <section className="relative bg-[#CBDBE7] px-4 py-20">
       {/* Tree Icon - Bottom Left */}
-      <div className="absolute bottom-8 left-8">
-        <img src={treeIcon} alt="Tree icon" className="w-16 h-16 md:w-20 md:h-20" />
-      </div>
+      <img
+        src="/Images/Landing Page/CoA tree.png"
+        alt="Children of Adam tree"
+        className="pointer-events-none absolute bottom-6 left-6 w-20 md:w-28"
+      />
 
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 ${
+            headerVisible ? "animate-fade-in" : "opacity-0 translate-y-4"
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-4">
             Our Mission at Work
           </h2>
@@ -48,11 +109,19 @@ const MissionAtWork = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div
+          ref={cardsRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className={`overflow-hidden rounded-2xl bg-[#FFFEEF] shadow-md transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl ${
+                cardsVisible
+                  ? "animate-card-pop"
+                  : "opacity-0 translate-y-5 scale-[0.98]"
+              }`}
+              style={cardsVisible ? { animationDelay: `${index * 120}ms` } : {}}
             >
               {/* Project Image */}
               <div className="aspect-[4/3] overflow-hidden">
@@ -95,9 +164,18 @@ const MissionAtWork = () => {
                 </div>
 
                 {/* Learn More Button */}
-                <button className="text-sm font-medium text-foreground hover:text-primary transition-colors underline">
-                  Learn More
-                </button>
+                <div className="mt-6 flex justify-center">
+                  <button
+                    className="w-60 rounded-full bg-white/80 px-6 py-2 text-sm font-semibold text-foreground shadow hover:bg-white"
+                    onClick={() => {
+                      const link = getProjectLink(project.title);
+                      // Navigate with hash - OurWork page will handle smooth scrolling
+                      navigate(link);
+                    }}
+                  >
+                    Learn More
+                  </button>
+                </div>
               </div>
             </div>
           ))}

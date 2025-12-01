@@ -1,56 +1,51 @@
-import missionVisionPeople from "@/assets/mission-vision-people.jpg";
-import treeIcon from "@/assets/tree-icon.png";
-
 const MissionVision = () => {
+  const missionImage = "/Images/Landing Page/2 boys smiling grey.png";
+  const coaTree = "/Images/Landing Page/CoA tree.png";
+
   return (
-    <section className="relative py-20 px-4 bg-muted/30">
-      {/* Colorful dots decoration */}
-      <div className="absolute top-10 left-1/4 w-8 h-8 rounded-full bg-[hsl(25,85%,60%)] opacity-80" />
-      <div className="absolute top-16 left-[30%] w-10 h-10 rounded-full bg-[hsl(280,70%,60%)] opacity-80" />
-      <div className="absolute top-8 left-[35%] w-6 h-6 rounded-full bg-[hsl(0,0%,0%)] opacity-80" />
-      <div className="absolute top-4 left-[40%] w-12 h-12 rounded-full bg-[hsl(190,70%,65%)] opacity-80" />
-      <div className="absolute top-2 left-[45%] w-10 h-10 rounded-full bg-[hsl(0,85%,60%)] opacity-80" />
-      <div className="absolute top-12 left-[50%] w-8 h-8 rounded-full bg-[hsl(280,70%,55%)] opacity-80" />
-      <div className="absolute top-20 right-[28%] w-10 h-10 rounded-full bg-[hsl(25,85%,55%)] opacity-80" />
-      <div className="absolute top-6 right-[23%] w-12 h-12 rounded-full bg-[hsl(280,65%,60%)] opacity-80" />
-      <div className="absolute top-16 right-[18%] w-8 h-8 rounded-full bg-[hsl(190,75%,60%)] opacity-80" />
-      <div className="absolute top-3 right-[15%] w-10 h-10 rounded-full bg-[hsl(25,80%,60%)] opacity-80" />
+    <section className="relative bg-white px-4 py-24">
+      {/* CoA tree logo bottom left */}
+      <img
+        src={coaTree}
+        alt="Children of Adam tree"
+        className="pointer-events-none absolute bottom-6 left-6 w-20 md:w-28"
+      />
 
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-          {/* Our Mission */}
-          <div className="text-left">
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Our Mission
-            </h2>
-            <p className="text-foreground/90 text-lg leading-relaxed">
-              To enlighten minds, engage hearts and empower hands through Knowledge & Research, Holistic Wellness, and Humanitarian Service driven by Islamic values.
-            </p>
-          </div>
+      <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-16 lg:flex-row lg:items-center lg:gap-16">
+        {/* Mission copy */}
+        <div className="w-full max-w-md text-left lg:flex-1" data-aos="fade-right">
+          <h2 className="text-5xl font-semibold tracking-tight text-black md:text-6xl">Our Mission</h2>
+          <p className="mt-6 text-lg leading-relaxed text-black/80">
+            To enlighten minds, engage hearts and empower hands through Knowledge &amp; Research, Holistic Wellness,
+            and Humanitarian Service driven by Islamic values.
+          </p>
+        </div>
 
-          {/* Center Image with Tree Icon */}
-          <div className="relative flex justify-center">
-            <img
-              src={treeIcon}
-              alt="Tree icon"
-              className="absolute -left-4 bottom-8 w-16 h-16 lg:w-20 lg:h-20 z-10"
-            />
-            <img
-              src={missionVisionPeople}
-              alt="Two people representing our mission"
-              className="w-full max-w-md rounded-lg grayscale"
-            />
-          </div>
+        {/* Central image */}
+        <div className="relative flex w-full justify-center lg:flex-[1.8]" data-aos="zoom-in" data-aos-delay="200">
+          {/* Tree image as background layer */}
+          <img
+            src={coaTree}
+            alt="Children of Adam tree background"
+            className="absolute inset-0 z-0 w-full max-w-none object-contain opacity-50 lg:w-[150%]"
+            style={{ transform: 'translate(-10%, -18%) translateZ(0)' }}
+          />
+          {/* Boys image as foreground layer */}
+          <img
+            src={missionImage}
+            alt="Two boys smiling"
+            className="relative z-10 w-full max-w-none lg:w-[150%]"
+          />
+        </div>
 
-          {/* Our Vision */}
-          <div className="text-left lg:text-right">
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Our Vision
-            </h2>
-            <p className="text-foreground/90 text-lg leading-relaxed">
-              Imagining a better world where everyone is living spiritually well, physically healthy and socially rich.
-            </p>
-          </div>
+        {/* Vision copy */}
+        <div className="w-full max-w-md text-left lg:flex-1 lg:pt-40" data-aos="fade-left" data-aos-delay="400">
+          <h2 className="text-5xl font-semibold tracking-tight text-black md:text-6xl">
+            Our Vision
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-black/80 lg:mt-6">
+            Imagining a better world where everyone is living spiritually well, physically healthy and socially&nbsp;rich.
+          </p>
         </div>
       </div>
     </section>
