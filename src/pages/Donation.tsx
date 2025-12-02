@@ -113,15 +113,15 @@ const Donation = () => {
           {/* Stacked option images */}
           <div className="flex w-full max-w-xl flex-col gap-4 md:gap-5">
             {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div 
-                key={num} 
+              <div
+                key={num}
                 className="w-full cursor-pointer transition-opacity hover:opacity-90"
                 onClick={() => setIsModalOpen(true)}
               >
                 <img
                   src={`/Images/Donation Page/${num}.png`}
                   alt={`Donation option ${num}`}
-                  className="block h-auto w-full object-contain"
+                  className="mx-auto block h-auto w-full max-w-[520px] object-contain"
                 />
               </div>
             ))}

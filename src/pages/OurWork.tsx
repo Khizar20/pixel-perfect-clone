@@ -80,7 +80,7 @@ const OurWork = () => {
   }, []);
   return (
     <div 
-      className="min-h-screen relative"
+      className="min-h-screen relative overflow-x-hidden"
       style={{
         background: `
           radial-gradient(circle at 20% 50%, #A173BD 0%, transparent 50%),
@@ -149,9 +149,9 @@ const OurWork = () => {
             }`}
           >
             <img
-              src="/Images/Landing Page/CoA tree.png"
+              src="/Images/Landing Page/CoA tree1.png"
               alt="Children of Adam tree"
-              className="w-[28rem] md:w-[32rem] lg:w-[36rem] xl:w-[40rem]"
+              className="w-[16rem] md:w-[18rem] lg:w-[20rem] xl:w-[22rem]"
             />
           </div>
 
@@ -160,7 +160,7 @@ const OurWork = () => {
             {/* Engage - Left Column */}
             <div 
               data-animate-id="engage-section"
-              className={`relative z-20 space-y-6 text-white -ml-4 md:-ml-8 lg:-ml-12 mt-16 md:mt-20 lg:mt-24 self-end transition-all duration-1000 ${
+              className={`relative z-20 space-y-6 text-white ml-4 md:ml-8 lg:ml-12 mt-16 md:mt-20 lg:mt-24 self-end transition-all duration-1000 ${
                 visibleSections.has('engage-section') 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-10'

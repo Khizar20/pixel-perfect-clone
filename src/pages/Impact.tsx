@@ -3,37 +3,11 @@ import Footer from "@/components/Footer";
 
 const Impact = () => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative" style={{ background: "#82C9D8" }}>
       <Navbar />
       
-      {/* Spacer to show background color above Impact section */}
-      <div 
-        className="h-32 md:h-40 lg:h-48"
-        style={{
-          background: '#7EC7D7',
-          backgroundImage: `
-            repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px),
-            repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px),
-            radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
-            radial-gradient(circle at 70% 70%, rgba(255,255,255,0.08) 0%, transparent 50%)
-          `,
-          backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%'
-        }}
-      ></div>
-
-      {/* Real People, Real Impact Section */}
       <section 
-        className="relative px-4 py-12 md:py-16 lg:py-20"
-        style={{
-          background: '#7EC7D7',
-          backgroundImage: `
-            repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px),
-            repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.02) 10px, rgba(0,0,0,0.02) 20px),
-            radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
-            radial-gradient(circle at 70% 70%, rgba(255,255,255,0.08) 0%, transparent 50%)
-          `,
-          backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%'
-        }}
+        className="relative px-4 pt-28 pb-12 md:pt-32 md:pb-16 lg:pt-36 lg:pb-20"
       >
         <div className="relative mx-auto max-w-7xl">
           {/* Main Title */}
