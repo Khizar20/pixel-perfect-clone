@@ -2,7 +2,7 @@ const ZakatTransparency = () => {
   return (
     <section className="relative">
       {/* Operating expenses section */}
-      <div className="bg-[#555556] px-4 py-16 text-center text-white">
+      <div className="bg-[#A4D7E1] px-4 py-16 text-center text-white">
         <div className="mx-auto max-w-4xl space-y-4">
           <h2 className="text-3xl font-semibold md:text-4xl">How do we cover our expenses?</h2>
           <p className="text-base leading-relaxed md:text-lg">
@@ -13,7 +13,7 @@ const ZakatTransparency = () => {
       </div>
 
       {/* Why it matters section */}
-      <div className="relative bg-[#E8E5E2] px-4 py-20 text-center text-black">
+      <div className="relative bg-[#FCFCFC] px-4 py-20 text-center text-black">
         <img
           src="/Images/Landing Page/CoA tree.png"
           alt="Children of Adam tree"

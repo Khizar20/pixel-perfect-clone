@@ -1,6 +1,13 @@
-import { Heart } from "lucide-react";
+import { useState } from "react";
+import { Heart, Menu, X } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const logoWithText = "/Images/Landing%20Page/CoA%20Logo%20with%20text.png";
 
   return (
@@ -10,6 +17,7 @@ const Navbar = () => {
         href="/#who-are-we"
         className="pointer-events-auto absolute left-2 top-1/2 -translate-y-1/2 md:left-8"
         aria-label="Children of Adam home"
+        onClick={() => setIsOpen(false)}
       >
         <img
           src={logoWithText}
@@ -44,12 +52,54 @@ const Navbar = () => {
           <Heart className="h-4 w-4 fill-current" />
         </a>
 
-        {/* Mobile Menu Button */}
-        <button className="ml-auto rounded-full border border-white/40 p-2 text-white md:hidden">
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        {/* Mobile Menu */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <button className="ml-auto rounded-full border border-white/40 p-2 text-white md:hidden">
+              <Menu className="h-6 w-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] bg-black/95 text-white">
+            <div className="flex flex-col gap-6 mt-8">
+              <a
+                href="/#who-are-we"
+                className="text-lg font-light tracking-wide transition-colors hover:text-sky-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Who Are We
+              </a>
+              <a
+                href="/our-work"
+                className="text-lg font-light tracking-wide transition-colors hover:text-sky-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Our Work
+              </a>
+              <a
+                href="/our-team"
+                className="text-lg font-light tracking-wide transition-colors hover:text-sky-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Our Team
+              </a>
+              <a
+                href="/impact"
+                className="text-lg font-light tracking-wide transition-colors hover:text-sky-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Impact
+              </a>
+              <a
+                href="/donate"
+                className="flex items-center gap-2 text-lg font-medium uppercase tracking-wide text-[#ed1c24] mt-4 transition-colors hover:text-red-400"
+                onClick={() => setIsOpen(false)}
+              >
+                Donate
+                <Heart className="h-4 w-4 fill-current" />
+              </a>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </nav>
   );

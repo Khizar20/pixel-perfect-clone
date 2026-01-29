@@ -6,7 +6,7 @@ const projects = [
     image: "/Images/Landing Page/info boxes1.png",
     title: "Bani Adam Neuropsychiatric",
     description: "Pakistan's first comprehensive neuropsychiatric facility, providing mental health care and rehabilitation services to underserved communities.",
-    progress: 30,
+    progress: 15,
     goal: "2.4B",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     image: "/Images/Landing Page/info boxes3.png",
     title: "Qutrah - Clean Water Initiative",
     description: "Addressing Pakistan's water crisis by providing clean, safe drinking water to rural communities through sustainable well systems.",
-    progress: 65,
+    progress: 100,
     goal: "500K",
   },
 ];

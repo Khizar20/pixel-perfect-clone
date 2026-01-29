@@ -62,7 +62,7 @@ const ImpactStats = () => {
 
         <div className="grid w-full gap-6 rounded-3xl bg-[#a5cf6f] p-8 text-black lg:w-1/2 lg:grid-cols-2 lg:self-start lg:mr-auto">
           <StatItem icon={Users} endValue={50000} suffix="+" label="Lives Impacted" />
-          <StatItem icon={Droplet} endValue={12} suffix="" label="Water Filtration Plants" />
+          <StatItem icon={Droplet} endValue={11} suffix="" label="Water Filtration Plants" />
           <StatItem icon={Home} endValue={2500} suffix="+" label="Families Supported" />
           <StatItem icon={GraduationCap} endValue={450} suffix="+" label="Students Enrolled" />
         </div>

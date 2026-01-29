@@ -380,7 +380,7 @@ const OurWork = () => {
               {/* Location above image */}
               <div className="flex items-center justify-center gap-2 text-[#14b8a6] mb-4">
                 <MapPin className="h-5 w-5" />
-                <p className="font-medium text-base md:text-lg">Gadap, Karachi</p>
+                <p className="font-medium text-base md:text-lg">Korangi, Karachi</p>
               </div>
               
               <img
@@ -419,7 +419,7 @@ const OurWork = () => {
               </p>
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
-                393,094 square feet
+              24,228 square yards
               </h2>
               
               <p className="text-base md:text-lg text-black leading-relaxed">
@@ -473,19 +473,22 @@ const OurWork = () => {
             {/* Aerial Image Container */}
             <div 
               data-animate-id="aerial-image"
-              className={`relative w-full h-full min-h-[380px] md:min-h-[480px] lg:min-h-[580px] flex items-center justify-center p-6 md:p-8 transition-all duration-1000 delay-300 ${
+              className={`relative w-full h-full min-h-[300px] md:min-h-[380px] lg:min-h-[450px] flex flex-col items-center justify-center p-6 md:p-8 transition-all duration-1000 delay-300 ${
                 visibleSections.has('aerial-image') 
                   ? 'opacity-100 scale-100' 
                   : 'opacity-0 scale-95'
               }`}
             >
-              <div className="relative w-full max-w-[98%] h-auto aspect-[4/4.5]">
+              <div className="relative w-full max-w-[75%] h-auto aspect-[4/4.5]">
                 <img
-                  src="/Images/2nd page/top view city.png"
+                  src="/Images/2nd page/new.png"
                   alt="Aerial view of Gadap, Karachi"
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
+              <p className="text-base md:text-lg text-black mt-4 font-medium">
+                Korangi, Kaarachi
+              </p>
             </div>
           </div>
         </div>
@@ -634,146 +637,6 @@ const OurWork = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section 
-        className="relative px-4 py-16 md:py-24"
-        style={{
-          background: '#EDEEF1'
-        }}
-      >
-        <div className="relative mx-auto max-w-7xl">
-          {/* Title */}
-          <div 
-            data-animate-id="timeline-title"
-            className={`text-center mb-4 transition-all duration-1000 ${
-              visibleSections.has('timeline-title') 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">Timeline</h2>
-          </div>
-          
-          {/* Subtitle */}
-          <div 
-            data-animate-id="timeline-subtitle"
-            className={`text-center mb-12 md:mb-16 transition-all duration-1000 delay-200 ${
-              visibleSections.has('timeline-subtitle') 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            <p className="text-lg md:text-xl lg:text-2xl text-black">Bani Adam Neuropsychiatric Hospital</p>
-          </div>
-
-          {/* Timeline Steps */}
-          <div className="relative">
-            <div className="flex flex-col md:flex-row items-start md:items-end gap-4 md:gap-6 lg:gap-8 justify-center mb-0 pb-4" id="timeline-cards">
-              {/* Step 1 - Red */}
-              <div className="w-full md:w-[180px] lg:w-[200px]">
-                <div className="relative">
-                  {/* Header with triangle tab */}
-                  <div className="relative bg-red-500 px-4 py-3 rounded-t-lg h-[60px] flex items-center justify-center">
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-t-[15px] border-l-transparent border-r-transparent border-t-red-500"></div>
-                  </div>
-                  {/* White box */}
-                  <div className="bg-white px-4 py-3 rounded-b-lg shadow-sm mt-[15px] min-h-[130px] flex items-center justify-center">
-                    <p className="text-black text-sm md:text-base font-medium text-center">Land Secured</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 2 - Light Blue */}
-              <div className="w-full md:w-[180px] lg:w-[200px]">
-                <div className="relative">
-                  {/* Header with triangle tab */}
-                  <div className="relative bg-[#79C9DA] px-4 py-3 rounded-t-lg h-[60px] flex items-center justify-center">
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-t-[15px] border-l-transparent border-r-transparent border-t-[#79C9DA]"></div>
-                  </div>
-                  {/* White box */}
-                  <div className="bg-white px-4 py-3 rounded-b-lg shadow-sm mt-[15px] min-h-[130px] flex items-center justify-center">
-                    <p className="text-black text-sm md:text-base font-medium text-center">Construction started</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3 - Purple */}
-              <div className="w-full md:w-[180px] lg:w-[200px]">
-                <div className="relative">
-                  {/* Header with triangle tab */}
-                  <div className="relative bg-purple-500 px-4 py-3 rounded-t-lg h-[60px] flex items-center justify-center">
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-t-[15px] border-l-transparent border-r-transparent border-t-purple-500"></div>
-                  </div>
-                  {/* White box */}
-                  <div className="bg-white px-4 py-3 rounded-b-lg shadow-sm mt-[15px] min-h-[130px] flex items-center justify-center">
-                    <p className="text-black text-sm md:text-base font-medium text-center">Boundary wall completed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 4 - Orange */}
-              <div className="w-full md:w-[180px] lg:w-[200px]">
-                <div className="relative">
-                  {/* Header with triangle tab and year */}
-                  <div className="relative bg-orange-500 px-4 py-3 rounded-t-lg h-[60px] flex items-center justify-center">
-                    <p className="text-white font-bold text-base md:text-lg text-center">2024</p>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-t-[15px] border-l-transparent border-r-transparent border-t-orange-500"></div>
-                  </div>
-                  {/* White box */}
-                  <div className="bg-white px-4 py-3 rounded-b-lg shadow-sm mt-[15px] min-h-[130px] flex items-center justify-center">
-                    <p className="text-black text-sm md:text-base font-medium text-center">OPD construction started</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 5 - Green */}
-              <div className="w-full md:w-[180px] lg:w-[200px]">
-                <div className="relative">
-                  {/* Header with triangle tab and year */}
-                  <div className="relative bg-green-500 px-4 py-3 rounded-t-lg h-[60px] flex items-center justify-center">
-                    <p className="text-white font-bold text-base md:text-lg text-center">2025</p>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-full w-0 h-0 border-l-[10px] border-r-[10px] border-t-[15px] border-l-transparent border-r-transparent border-t-green-500"></div>
-                  </div>
-                  {/* White box */}
-                  <div className="bg-white px-4 py-3 rounded-b-lg shadow-sm mt-[15px] min-h-[130px] flex items-center justify-center">
-                    <p className="text-black text-sm md:text-base font-medium text-center">OPD's became operational</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Chain Icon Image - spans from first to last card */}
-            <div className="hidden md:block -mt-72">
-              <div className="flex justify-center">
-                <div className="relative w-[calc(5*180px+4*24px+60px)] lg:w-[calc(5*200px+4*32px+80px)]">
-                  <img
-                    src="/Images/2nd page/icon chain.png"
-                    alt="Timeline chain"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
-            
-            {/* Chain Icon Image - Mobile version */}
-            <div className="block md:hidden -mt-72">
-              <img
-                src="/Images/2nd page/icon chain.png"
-                alt="Timeline chain"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Tree Logo - Bottom Left */}
-        <img
-          src="/Images/Landing Page/CoA tree.png"
-          alt="Children of Adam tree"
-          className="absolute bottom-6 left-6 w-20 md:w-28 pointer-events-none z-10"
-        />
-      </section>
-
       {/* Patient Impact Section */}
       <section className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[600px] md:min-h-[700px]">
         {/* Left Column - Purple Background with Content */}
@@ -864,7 +727,7 @@ const OurWork = () => {
         {/* Right Column - Image */}
         <div 
           data-animate-id="checkup-image"
-          className={`relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] transition-all duration-1000 delay-300 ${
+          className={`relative w-full h-full min-h-[320px] md:min-h-[420px] lg:min-h-[520px] transition-all duration-1000 delay-300 ${
             visibleSections.has('checkup-image') 
               ? 'opacity-100 scale-100' 
               : 'opacity-0 scale-95'
@@ -872,7 +735,7 @@ const OurWork = () => {
         >
           {/* Image */}
           <img
-            src="/Images/2nd page/checkup image.png"
+            src="/Images/2nd page/6..png"
             alt="Medical consultation"
             className="absolute inset-0 w-full h-full object-cover object-left"
           />
@@ -938,38 +801,30 @@ const OurWork = () => {
 
           {/* Middle Section - Large Number with Left and Right Text */}
           <div className="relative mb-12 md:mb-16">
-            {/* Large 450+ Number with Left and Right Text on Same Line */}
+            {/* Large 570+ Number with Left and Right Text on Same Line */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-6 md:mb-8">
-              {/* Left Text with Bar */}
+              {/* Left Text with Bar - removed text, keeping bar for balance */}
               <div className="flex-1 text-left max-w-md">
-                <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed mb-2">
-                  450 + Students are currently enrolled in 6 Children of Adam's Informal Schools in Karachi and Islamabad.
-                </p>
-                {/* Purple Bar - Under left text only */}
-                <div className="h-2 max-w-md" style={{ backgroundColor: '#9E71BA' }}></div>
+                <div className="h-2 max-w-md mb-2" style={{ backgroundColor: '#9E71BA' }}></div>
               </div>
 
-              {/* Large 450+ Number - Center */}
+              {/* Large 570+ Number - Center */}
               <div 
-                data-animate-id="450-number"
+                data-animate-id="570-number"
                 className={`flex-shrink-0 transition-all duration-1000 delay-300 ${
-                  visibleSections.has('450-number') 
+                  visibleSections.has('570-number') 
                     ? 'opacity-100 scale-100' 
                     : 'opacity-0 scale-90'
                 }`}
               >
                 <h3 className="text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-bold leading-none" style={{ color: '#9E71BA', opacity: 0.6 }}>
-                  450+
+                  570+
                 </h3>
               </div>
 
-              {/* Right Text with Bar */}
+              {/* Right Text with Bar - removed text, keeping bar for balance */}
               <div className="flex-1 text-left max-w-md">
-                <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed mb-2">
-                  By offering education where it's needed most, we're breaking cycles of poverty and creating opportunities that last a lifetime.
-                </p>
-                {/* Purple Bar - right text only */}
-                <div className="h-2 max-w-md" style={{ backgroundColor: '#9E71BA' }}></div>
+                <div className="h-2 max-w-md mb-2" style={{ backgroundColor: '#9E71BA' }}></div>
               </div>
             </div>
           </div>
@@ -993,7 +848,7 @@ const OurWork = () => {
 
       {/* Be the Reason Section */}
       <section 
-        className="relative px-4 py-16 md:py-24 min-h-[800px] md:min-h-[900px] lg:min-h-[1000px] pb-32 md:pb-40 lg:pb-48"
+        className="relative px-4 py-16 md:py-24 lg:py-28"
         style={{
           background: '#FEFEFE',
           backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 0)',
@@ -1001,64 +856,328 @@ const OurWork = () => {
         }}
       >
         <div className="relative mx-auto max-w-7xl z-10">
-          {/* Top Section - Education Label and Headline */}
-          <div className="mb-8 md:mb-12">
-            {/* Education Label - Top Left */}
-            <div className="mb-4">
-              <p className="text-lg md:text-xl font-medium" style={{ color: '#9E71BA' }}>Education</p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left Column - Education Text & CTA */}
+            <div className="space-y-6 md:space-y-8">
+              {/* Education Label */}
+              <p className="text-lg md:text-xl font-medium" style={{ color: '#9E71BA' }}>
+                Education
+              </p>
+
+              {/* 570+ Number */}
+              <div>
+                <h3 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-none text-black mb-4 md:mb-6">
+                  570+
+                </h3>
+              </div>
+
+              {/* Students Paragraph */}
+              <p className="text-base md:text-lg lg:text-xl text-black leading-relaxed max-w-2xl">
+                Students are currently enrolled in 6 Children of Adam's Informal Schools in Karachi and Islamabad.<br />
+                By offering education where it's needed most, we're breaking cycles of poverty and creating opportunities that last a lifetime.
+              </p>
             
-            {/* Headline - Centered */}
+              {/* Headline */}
             <div 
               data-animate-id="dream-headline"
-              className={`text-center transition-all duration-1000 ${
+                className={`transition-all duration-1000 ${
                 visibleSections.has('dream-headline') 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-10'
               }`}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight" style={{ color: '#9E71BA' }}>
-                Be the reason a child learns to dream
+                  Be the reason a child<br className="hidden md:block" /> learns to dream.
               </h2>
-            </div>
           </div>
 
-          {/* Button */}
-          <div className="text-center mb-12 md:mb-16">
+              {/* Supporting line and CTA Button */}
+              <div className="space-y-4 md:space-y-6">
+                <p className="text-base md:text-lg lg:text-xl text-black max-w-xl">
+                  Give the gift of learning today and help a child unlock their potential.
+                </p>
             <button 
-              className="text-white font-medium px-8 py-4 md:px-10 md:py-5 rounded-lg text-lg md:text-xl transition-colors" 
+                  className="inline-flex items-center justify-center text-white font-medium px-8 py-4 md:px-10 md:py-5 rounded-lg text-lg md:text-xl shadow-lg transition-transform transition-colors"
               style={{ backgroundColor: '#FF6B35' }}
               onMouseEnter={(e) => e.currentTarget.style.opacity = '0.9'} 
               onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-              onClick={() => navigate('/donate')}
+                  onClick={() => {
+                    navigate('/donate');
+                    setTimeout(() => {
+                      const element = document.getElementById('your-gift-starts-here');
+                      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                  }}
             >
               Give the gift of learning today.
             </button>
           </div>
         </div>
 
-        {/* Kids Image - Bottom */}
+            {/* Right Column - Image collage */}
         <div 
           data-animate-id="kids-image"
-          className={`absolute bottom-0 left-0 right-0 w-full z-0 transition-all duration-1000 delay-500 ${
+              className={`relative w-full max-w-xl lg:max-w-none ml-auto lg:ml-8 xl:ml-16 transition-all duration-1000 delay-300 ${
             visibleSections.has('kids-image') 
               ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-20'
+                  : 'opacity-0 translate-y-10'
           }`}
         >
           <img
-            src="/Images/2nd page/kids.png"
-            alt="Children with graduation caps and certificates"
+                src="/Images/2nd page/8..png"
+                alt="Children learning and celebrating"
             className="w-full h-auto object-cover"
           />
         </div>
+          </div>
+        </div>
+      </section>
 
-        {/* Tree Logo - Bottom Left */}
-        <img
-          src="/Images/Landing Page/CoA tree.png"
-          alt="Children of Adam tree"
-          className="absolute bottom-6 left-6 w-20 md:w-28 pointer-events-none z-20"
-        />
+      {/* Safe Drinking Water Section */}
+      <section 
+        className="relative bg-[#FEFEFE] px-4 pt-16 pb-10 md:pt-20 md:pb-12 lg:pt-24 lg:pb-14"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0)',
+          backgroundSize: '20px 20px'
+        }}
+      >
+        <div className="mx-auto max-w-7xl">
+          {/* Section Title - Above Image and Stats */}
+          <div className="mb-8 md:mb-10 lg:mb-12">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-tight">
+              Safe Drinking<br />Water
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left - Image */}
+            <div className="relative flex justify-start lg:-ml-8">
+              <div className="relative z-10">
+                <img
+                  src="/Images/Impact/1..png"
+                  alt="Community member holding water container"
+                  className="w-full max-w-lg lg:max-w-xl h-auto object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Right - Text */}
+            <div className="space-y-5 md:space-y-6 text-[#5CC6DF]">
+              <div className="flex items-start gap-4">
+                <span className="text-7xl md:text-8xl lg:text-9xl font-bold leading-none">
+                  11
+                </span>
+                <span className="text-2xl md:text-3xl font-semibold leading-tight">
+                  water<br />filtration<br />plants
+                </span>
+              </div>
+
+              <div>
+                <p className="text-2xl md:text-3xl font-semibold leading-tight">
+                  serving
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <span className="block text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
+                  1000+
+                </span>
+                <span className="block text-xl md:text-2xl font-semibold leading-tight">
+                  residents in<br />
+                  Islamabad and<br />
+                  adjoining areas<br />
+                  every single day.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safe Drinking Water Details Section */}
+      <section 
+        className="relative bg-[#FEFEFE] px-4 pt-4 pb-12 md:pt-6 md:pb-16 lg:pt-8 lg:pb-20"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0)',
+          backgroundSize: '20px 20px'
+        }}
+      >
+        <div className="mx-auto max-w-7xl space-y-8 md:space-y-10">
+          {/* Intro Text */}
+          <p className="text-base md:text-lg lg:text-xl text-black max-w-3xl leading-relaxed">
+            Across many communities, families still walk miles every day just to collect water that isn't even safe to drink.
+            Our water filtration centers change that reality.
+          </p>
+
+          {/* What This Project Provides */}
+          <div className="space-y-4 md:space-y-5">
+            <p className="text-lg md:text-xl font-semibold text-black">
+              What This Project Provides
+            </p>
+
+            {/* Benefit 1 */}
+            <div
+              className="flex items-center gap-4 md:gap-6 px-4 md:px-6 py-3 md:py-4"
+              style={{ backgroundColor: '#5CC6DF' }}
+            >
+              <img
+                src="/Images/Impact/tickicon1.png"
+                alt="Shield icon"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
+              <p className="text-base md:text-lg lg:text-xl font-medium text-black">
+                Free, safe drinking water for entire neighbourhood&apos;s.
+              </p>
+            </div>
+
+            {/* Benefit 2 */}
+            <div
+              className="flex items-center gap-4 md:gap-6 px-4 md:px-6 py-3 md:py-4"
+              style={{ backgroundColor: '#5CC6DF' }}
+            >
+              <img
+                src="/Images/Impact/tickicon2.png"
+                alt="Sustainable systems icon"
+                className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
+              <p className="text-base md:text-lg lg:text-xl font-medium text-black">
+                Sustainable systems, maintained and monitored regularly.
+              </p>
+            </div>
+          </div>
+
+          {/* Be Part of the Change + CTA */}
+          <div className="space-y-4 md:space-y-5">
+            <div>
+              <p className="text-lg md:text-xl font-semibold text-black">
+                Be Part of the Change
+              </p>
+              <p className="text-base md:text-lg text-black max-w-3xl leading-relaxed mt-2">
+                Your support helps us expand these centers and bring clean water to more families across Pakistan.
+              </p>
+            </div>
+
+            <div className="space-y-2">
+              <button
+                className="px-6 py-3 md:px-8 md:py-4 rounded-md text-white font-semibold text-base md:text-lg shadow-md"
+                style={{ backgroundColor: '#5CC6DF' }}
+                onClick={() => {
+                  navigate('/donate');
+                  setTimeout(() => {
+                    const element = document.getElementById('your-gift-starts-here');
+                    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
+                }}
+              >
+                Support Clean Water
+              </button>
+              <p className="text-xs md:text-sm text-gray-600">
+                *This project isn&apos;t taking contributions at the moment. Thank you for your interest and support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Safe Drinking Water Gallery Section */}
+      <section 
+        className="relative bg-[#FEFEFE] px-4 pt-4 pb-16 md:pt-6 md:pb-20 lg:pt-8 lg:pb-24"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0)',
+          backgroundSize: '20px 20px'
+        }}
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+            <div className="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="/Images/Impact/4.3.png"
+                alt="Water filtration plant interior"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="w-full aspect-[4/3] overflow-hidden">
+              <img
+                src="/Images/Impact/11.png"
+                alt="Man carrying clean water container"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations of Water Filtration Plants Section */}
+      <section 
+        className="relative bg-white px-4 py-16 md:py-20 lg:py-24 min-h-[600px] md:min-h-[700px]"
+      >
+        {/* Background Mosque Image */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute right-0 top-0 bottom-0 w-2/3 opacity-70">
+            <img
+              src="/Images/Impact/3..png"
+              alt="Faisal Mosque outline"
+              className="w-full h-full object-contain object-right"
+            />
+          </div>
+        </div>
+
+        <div className="relative mx-auto max-w-7xl z-10">
+          {/* Heading */}
+          <div className="mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight" style={{ color: '#00BCD4' }}>
+              Locations of our Water filtration<br />Plants in Islamabad.
+            </h2>
+          </div>
+
+          {/* Location Labels - Row Layout */}
+          <div className="space-y-6 md:space-y-8">
+            {/* Row 1 */}
+            <div className="flex flex-wrap gap-4 md:gap-6 items-center">
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-10
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-7/2
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                Rawal Town
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                I-10
+              </div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex flex-wrap gap-4 md:gap-6 items-center">
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-10
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-7/3
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                Margalla Town
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                F-7 Marvi Road
+              </div>
+            </div>
+
+            {/* Row 3 */}
+            <div className="flex flex-wrap gap-4 md:gap-6 items-center">
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-7/1
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                G-7/3 St. 2
+              </div>
+              <div className="px-4 py-2 md:px-5 md:py-3 rounded-full text-white font-medium text-sm md:text-base w-fit" style={{ backgroundColor: '#8A5BB8' }}>
+                Shahzad Town
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />

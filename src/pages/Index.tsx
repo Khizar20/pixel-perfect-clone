@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import MissionVision from "@/components/MissionVision";
 import ExploreSection from "@/components/ExploreSection";
 import MissionAtWork from "@/components/MissionAtWork";
-import ImpactMap from "@/components/ImpactMap";
 import ZakatModel from "@/components/ZakatModel";
+import ZakatCertificate from "@/components/ZakatCertificate";
 import ZakatTransparency from "@/components/ZakatTransparency";
 import ImpactStats from "@/components/ImpactStats";
 import CallToAction from "@/components/CallToAction";
@@ -18,8 +18,8 @@ const Index = () => {
       <MissionVision />
       <ExploreSection />
       <MissionAtWork />
-      <ImpactMap />
       <ZakatModel />
+      <ZakatCertificate />
       <ZakatTransparency />
       <ImpactStats />
       <CallToAction />
